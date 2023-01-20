@@ -107,6 +107,7 @@ body {
   color: #525f7f;
   text-align: left;
   background-color: #171941;
+  overflow-x: hidden;
 }
 
 [tabindex="-1"]:focus {
@@ -20827,6 +20828,8 @@ background: linear-gradient(to right, #ff5858, #f857a6); /* W3C, IE 10+/ Edge, F
   width: 80%;
   padding-top: 50px;
   padding-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .swiper-slide {

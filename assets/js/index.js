@@ -1,7 +1,3 @@
-
-  
-
-
 // swiper js
 var swiper = new Swiper('.swiper-container', {
     effect: 'coverflow',
@@ -21,3 +17,9 @@ var swiper = new Swiper('.swiper-container', {
       disableOnInteraction: false,
     },
   });
+
+  function reinitSwiper(swiper) {
+    setTimeout(function () {
+     swiper.update();
+    }, 500);
+  }

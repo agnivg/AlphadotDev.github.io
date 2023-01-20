@@ -26,7 +26,6 @@
 
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"
       />
-      <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>    
   </head>
 
   <body class="index-page">
@@ -214,10 +213,12 @@
 
             <!-- slide show  -->
 
-            <div class="swiper-container" style="margin-left: auto;
-              margin-right: auto;">
+            <div class="swiper-container">
               <div class="swiper-wrapper" id="pro">
                 
+              </div>
+              
+ 
               </div>
 
             </div>
@@ -350,6 +351,7 @@
         type="text/javascript"></script>
       
       <!-- Swiper JS -->
+      
         <script>
     
     $(document).ready(function(){
@@ -366,7 +368,7 @@
               <div class="card-body">
                 <h5 class="card-title">${data.data[i].attributes.ProjectName}</h5>
                 <p class="card-text">${data.data[i].attributes.Description}</p>
-                <a target="blank" href="${data.data[i].attributes.URL}" class="btn btn-light">View
+                <a target="blank" href="${data.data[i].attributes.URL}" class="btn btn-light btn-round">View
                   Project</a>
               </div>
             </div>`
@@ -376,6 +378,29 @@
           console.log(v)
           l.innerHTML=v
 
+          var swiper = new Swiper('.swiper-container', {
+            effect: 'coverflow',
+            grabCursor: true,
+            centeredSlides: true,
+            loop: true,
+            slidesPerView: 'auto',
+            coverflowEffect: {
+              rotate: 70,
+              stretch: 0,
+              depth: 600,
+              modifier: 1,
+              slideShadows: true,
+            },
+            autoplay: {
+              delay: 2500,
+              disableOnInteraction: false,
+            },
+          });
+
+          //swiper.autoplay.start();
+          // swiper.appendSlide(v); //append the images
+  //swiper.update(); //update swiper so it redoes the bindings
+          //reinitSwiper(); -->
         }
       });
     })
@@ -390,10 +415,7 @@
       }
     }
   </script>
-  <script src="/assets/js/index.js"></script>
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-
     </body>
 
   </html>
