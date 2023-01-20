@@ -26,6 +26,7 @@
 
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"
       />
+      <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>    
   </head>
 
   <body class="index-page">
@@ -215,37 +216,11 @@
 
             <div class="swiper-container" style="margin-left: auto;
               margin-right: auto;">
-              <div class="swiper-wrapper">
-
-                <div class="card swiper-slide">
-                  <img src="/assets/img/art.svg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Internship at JDMR Ischool</h5>
-                    <p class="card-text">I have worked as a web developer intern
-                      at JDMR Ischool, an Ed-tech startup.</p>
-                    <a target="blank" href="" class="btn btn-light">View
-                      certificate</a>
-                  </div>
-                </div>
-
-                <div class="card swiper-slide">
-                  <img src="/assets/img/art.svg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Quizmaster</h5>
-                    <p class="card-text">A website to Host and participate in
-                      quiz contests. Made using Html, CSS, Bootstrap, Django,
-                      Javascript, Jquery.</p>
-                    <a target="blank"
-                      href="http://quizmaster.pythonanywhere.com/" class="btn
-                      btn-light">View Project</a>
-                  </div>
-                </div>
-
+              <div class="swiper-wrapper" id="pro">
+                
               </div>
 
             </div>
-
-
 
           </div>
         </div>
@@ -257,26 +232,33 @@
 
       <!-- Contact us -->
       <div class="container mb-5">
-        <h1 class="text-primary text-center" style="font-weight: 800;">Contact Us</h1>
+        <h1 class="text-primary text-center" style="font-weight: 800;">Contact
+          Us</h1>
         <div class="row">
           <div class="col-md-6 p-4">
             <img src="/assets/img/contact.svg" alt="" style="width: 100%;">
           </div>
           <div class="col-md-6 p-4">
             <form action="https://formspree.io/f/mvongvwn"
-            method="POST">
-            <div class="form-group">
-              <input type="text" name="name" required class="form-control" id="exampleInputName" aria-describedby="emailHelp" placeholder="Enter Name">
-            </div>  
-            <div class="form-group">
-                <input type="email" name="email" required class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+              method="POST">
+              <div class="form-group">
+                <input type="text" name="name" required class="form-control"
+                  id="exampleInputName" aria-describedby="emailHelp"
+                  placeholder="Enter Name">
               </div>
-              
-            <div class="form-group">
-              <textarea name="message" id="" rows="10" required class="form-control" placeholder="Your Message"></textarea>
-            </div>
-            
-              <button type="submit" class="btn btn-sm btn-primary">Submit <i class="fa fa-paper-plane"></i> </button>
+              <div class="form-group">
+                <input type="email" name="email" required class="form-control"
+                  id="exampleInputEmail1" aria-describedby="emailHelp"
+                  placeholder="Enter email">
+              </div>
+
+              <div class="form-group">
+                <textarea name="message" id="" rows="10" required
+                  class="form-control" placeholder="Your Message"></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-sm btn-primary">Submit <i
+                  class="fa fa-paper-plane"></i> </button>
             </form>
           </div>
         </div>
@@ -356,7 +338,7 @@
         type="text/javascript"></script>
       <!-- Chart JS -->
       <script src="./assets/js/plugins/chartjs.min.js"></script>
-      
+
       <!--  Plugin for the DatePicker, full documentation here: https://github.com/uxsolutions/bootstrap-datepicker -->
       <script src="./assets/js/plugins/moment.min.js"></script>
       <script src="./assets/js/plugins/bootstrap-datetimepicker.js"
@@ -366,11 +348,38 @@
       <!-- Control Center for Black UI Kit: parallax effects, scripts for the example pages etc -->
       <script src="./assets/js/blk-design-system.min.js?v=1.0.0"
         type="text/javascript"></script>
-      <script>
-    $(document).ready(function() {
-      blackKit.initDatePicker();
-      blackKit.initSliders();
-    });
+      
+      <!-- Swiper JS -->
+        <script>
+    
+    $(document).ready(function(){
+      $.ajax({
+        type: "GET",
+        url: 'https://alphapi.onrender.com/api/projects?populate=*',
+        success: function (data) {
+
+          var v=""
+          for(let i=0;i<data.data.length;i++)
+          {
+            v+=`<div class="card swiper-slide">
+              <img src=${data.data[i].attributes.Image.data.attributes.url} class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">${data.data[i].attributes.ProjectName}</h5>
+                <p class="card-text">${data.data[i].attributes.Description}</p>
+                <a target="blank" href="${data.data[i].attributes.URL}" class="btn btn-light">View
+                  Project</a>
+              </div>
+            </div>`
+          }
+          //alert(v)
+          var l=document.getElementById('pro')
+          console.log(v)
+          l.innerHTML=v
+
+        }
+      });
+    })
+    
 
     function scrollToDownload() {
 
@@ -381,9 +390,10 @@
       }
     }
   </script>
-  <!-- Swiper JS -->
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="/assets/js/index.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+
     </body>
 
   </html>
