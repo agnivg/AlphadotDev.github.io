@@ -17692,7 +17692,7 @@ hr.line-deafult {
 }
 
 .page-header .content-center.brand {
-  width: 47%;
+  width: 100%;
 }
 
 .page-header footer {
@@ -20839,4 +20839,7 @@ background: linear-gradient(to right, #ff5858, #f857a6); /* W3C, IE 10+/ Edge, F
   background-size: cover;
   width: 300px !important;
   background-color: white;
+}
+.h1-seo{
+  font-size: 4em !important;
 }
