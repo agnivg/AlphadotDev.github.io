@@ -20825,11 +20825,13 @@ background: linear-gradient(to right, #ff5858, #f857a6); /* W3C, IE 10+/ Edge, F
 
 /* swipe styling */
 .swiper-container {
-  width: 80%;
+  width: 100%;
   padding-top: 50px;
   padding-bottom: 50px;
   margin-left: auto;
   margin-right: auto;
+  position: relative;
+  overflow: hidden;
 }
 
 .swiper-slide {
