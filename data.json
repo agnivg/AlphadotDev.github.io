@@ -1,0 +1,22 @@
+{
+    "data":[
+        {
+            "name":"Blog Website",
+            "desc":"A modern blog website with Dashboard, web analytics, cloud storage and mailing system.",
+            "img":"https://res.cloudinary.com/dc7dgvxow/image/upload/v1674411382/AlphaProjects/Neutral_Minimalist_Romantic_Photo_Collage_wdabp5.png",
+            "link":"https://djmblogs.netlify.app/"
+        },
+        {
+            "name":"Portfolio Website",
+            "desc":"Personal Portfolio Website",
+            "img":"https://res.cloudinary.com/dc7dgvxow/image/upload/v1674411377/AlphaProjects/Light_Blue_White_Clean_Grid_Family_Photo_Collage_dokavb.png",
+            "link":"https://djm-1.github.io"
+        },
+        {
+            "name":"Quiz website",
+            "desc":"Online platform to host and participate in quiz contests.",
+            "img":"https://res.cloudinary.com/dc7dgvxow/image/upload/v1674411377/AlphaProjects/screencapture-quizmaster-pythonanywhere-2022-10-04-19_47_52_egkdyv.png",
+            "link":"https://quizmaster.pythonanywhere.com"
+        }
+    ]
+}

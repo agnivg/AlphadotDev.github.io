@@ -361,20 +361,17 @@
         <script>
     
     $(document).ready(function(){
-      $.ajax({
-        type: "GET",
-        url: 'https://alphapi.onrender.com/api/projects?populate=*',
-        success: function (data) {
+      $.getJSON('data.json',function (data) {
 
           var v=""
           for(let i=0;i<data.data.length;i++)
           {
             v+=`<div class="card swiper-slide">
-              <img src=${data.data[i].attributes.Image.data.attributes.url} class="card-img-top" alt="...">
+              <img src=${data.data[i].img} class="card-img-top" alt="...">
               <div class="card-body">
-                <h5 class="card-title">${data.data[i].attributes.ProjectName}</h5>
-                <p class="card-text">${data.data[i].attributes.Description}</p>
-                <a target="blank" href="${data.data[i].attributes.URL}" class="btn btn-light btn-round">View
+                <h5 class="card-title">${data.data[i].name}</h5>
+                <p class="card-text">${data.data[i].desc}</p>
+                <a target="blank" href="${data.data[i].link}" class="btn btn-light btn-round">View
                   Project</a>
               </div>
             </div>`
@@ -402,12 +399,7 @@
               disableOnInteraction: false,
             },
           });
-
-          //swiper.autoplay.start();
-          // swiper.appendSlide(v); //append the images
-  //swiper.update(); //update swiper so it redoes the bindings
-          //reinitSwiper(); -->
-        }
+       
       });
     })
     
