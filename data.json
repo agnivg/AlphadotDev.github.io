@@ -17,6 +17,12 @@
             "desc":"Online platform to host and participate in quiz contests.",
             "img":"https://res.cloudinary.com/dc7dgvxow/image/upload/v1674411377/AlphaProjects/screencapture-quizmaster-pythonanywhere-2022-10-04-19_47_52_egkdyv.png",
             "link":"https://quizmaster.pythonanywhere.com"
+        },
+        {
+            "name":"Instapost",
+            "desc":"A social media website for creating posts and chatting with others",
+            "img":"https://res.cloudinary.com/dc7dgvxow/image/upload/v1674588148/Screenshot_2023-01-25_005210_zuix7b.png",
+            "link":"https://instaa-post.netlify.app/"
         }
     ]
 }
